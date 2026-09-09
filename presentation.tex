@@ -1,0 +1,88 @@
+\documentclass[10pt, aspectratio = 169]{beamer}
+
+
+
+\usepackage[acronym]{glossaries}
+% Change spacing
+\usepackage{xspace}
+\usepackage{setspace}
+% \usepackage{enumitem}% Spacing of itemized lists
+% Line Numbers
+\usepackage{lineno}
+% Math 
+\usepackage{amsmath}
+\usepackage{siunitx}
+% Include code
+\usepackage{listings}
+% For Tables and images
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{colortbl}
+\usepackage{ulem}
+% \usepackage{utils/tikz-feynman}
+\captionsetup{justification=centering}
+% \usepackage{subf}
+\newcommand{\blueunderline}[1]{\textcolor{PrimaryColor}{\underline{{#1}}}}
+\usepackage{notoccite}
+\usepackage[backend=biber, url=false, sorting=none]{biblatex}
+
+% Theme choice
+\usetheme{Soton}
+\usecolortheme{default}
+
+% Title page information
+\title{Tracker 2026 Data Taking Anomaly}
+\subtitle{Faser General Meeting}
+\author{Pawan}
+\supervisors[on behalf of]{Tracker Team}
+\institute{University of Liverpool}
+\date{11 September 2026}
+
+\setTitleLogoRight{assets/logo/Faser/FaserLogo_transparent_white.png}
+\setTitleLogoLeft{assets/logo/Faser/CERNLogoOutline-White.png}
+% \setTitleLogoLeft{assets/UK_Research_and_Innovation_logo.pdf}
+% \setLogo{assets/logo/UoL.png}
+% \setColourScheme{50}{85}{234}
+
+% \setProgressBarOff % Removes the progress bar at the bottom of the slides
+% \setFrameNumbersOff % Removes the frame numbers at the bottom of the slides
+% \setSectionInFootlineOff % Removes the section titles from the footline
+\AtBeginSection{} % Removes auto-generated section slides, But keeps ToC
+
+
+\begin{document}
+\input{utils/commands.tex}
+\input{utils/glossary.tex}
+
+% Title slide
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+% \section{Blocks}
+% \begin{frame}
+%     \frametitle{Blocks}
+
+%     \begin{block}{Test Block}
+%         This is a test block.
+%     \end{block}
+        
+%     \begin{exampleblock}{Example Block}
+%         This is an example block.
+%     \end{exampleblock}
+
+%     \begin{alertblock}{Alert Block}
+%         This is an alert block.
+%     \end{alertblock}
+% \end{frame}
+
+
+\include{chapters/chapter1.tex}
+
+
+\end{document}

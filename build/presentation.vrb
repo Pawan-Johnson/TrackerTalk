@@ -1,0 +1,33 @@
+\frametitle{Is it recoverable?}
+
+    \begin{itemize}
+        \item It is still unclear.
+        \item A preliminary test was to comment out this error check in \texttt{Calypso}.
+    \end{itemize}
+
+
+    \scriptsize{
+        \begin{verbatim}
+          else if (sctEvent->HasError())
+          {
+            // FIXME: Should we return failure here?
+            ATH_MSG_ERROR("Online module " << onlineModuleID << " reports one or more errors.");
+            // continue;
+            //Let's fill the data and see what happens
+          }
+        \end{verbatim}
+    }
+
+    \begin{itemize}
+        \item This seems to run \textcolor{red}{none of the other checks are triggered (? Pawan: Verify this)}
+        \begin{itemize}
+            \item This is probably a good sign.
+        \end{itemize}
+        \item This is not a proper fix, but just a test to see if data is recovered.
+        \begin{itemize}
+            \item Still need to identify and fix the root cause of the error.
+            \item If not fixable, then we need to handle it correctly in the reconstruction.
+        \end{itemize}
+        \item Some results in the next slides.
+    \end{itemize}
+
