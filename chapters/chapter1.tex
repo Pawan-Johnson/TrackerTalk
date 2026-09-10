@@ -35,7 +35,7 @@
             \node[inner sep=0, outer sep=0] (img) at (0,0)
             {\includegraphics[width=\textwidth]{assets/Residual_Means_2026_4ST_forward.pdf}};
 
-            \draw[red, very thick]
+            \draw[red, thick]
             ($(img.south west)!0.71!(img.south east) + (0,0.1)$)
             rectangle
             node (rect) {}
@@ -77,14 +77,13 @@
         \centering
         \begin{subfigure}{0.49\textwidth}
             \includegraphics[width=\textwidth]{assets/Clusters_Nominal.pdf}
-            \caption{Clusters from Run \texttt{022300}}
+            \caption{Clusters from Run \#{022300}}
         \end{subfigure}
         \begin{subfigure}{0.49\textwidth}
-            % \includegraphics[width=\textwidth]{assets/SpacePoints_Nominal.pdf}
-            \caption{Space Points from Run \texttt{022300}}
+            \includegraphics[width=\textwidth]{assets/SpacePoints_Nominal.pdf}
+            \caption{Space Points from Run \#{022300}}
         \end{subfigure}
-        % \includegraphics[height=0.75\textheight]{assets/Clusters_Nominal.pdf}
-        \caption{SCT Clusters and Space Points from Run \texttt{022300}. Note that these are subset of the space points that are from the same layer.}
+        \caption{SCT Clusters and Space Points from Run \#{022300}. Note that these are subset of the space points that are from the same layer.}
     \end{figure}
 \end{frame}
 
@@ -92,8 +91,18 @@
     \frametitle{Similar Story with SCT Hits itself}
     \begin{figure}
         \centering
-        \includegraphics[height=0.75\textheight]{assets/SCTHits_Nominal.pdf}
-        \caption{SCT Hits from Event \texttt{2840829}, Run \texttt{022300}.\\Note that out of time HITS (!\texttt{01X}) are shown in grey.}
+        % \includegraphics[height=0.75\textheight]{assets/SCTHits_Nominal.pdf}
+        \begin{tikzpicture}
+            \node[inner sep=0, outer sep=0] (img) at (0,0)
+            {\includegraphics[width=0.70\textwidth]{assets/SCTHits_Nominal.pdf}};
+
+            \draw[red, very thick]
+            ($(img.south west)!0.625!(img.south east) + (0,1.85)$)
+            rectangle
+            node (rect) {}
+            ($(img.south west)!0.715!(img.south east) + (0,1.45)$);
+        \end{tikzpicture}
+        \caption{SCT Hits from Event \#{2840829}, Run \#{022300}. Hits missing in the highlighted module.\\Note that out of time HITS (!\texttt{01X}) are shown in grey.}
     \end{figure}
 \end{frame}
 
@@ -114,7 +123,7 @@
             \node[red, font=\footnotesize, anchor=north west, align=center] at ($(rect.south east)+(0.02,-0.01)$)
             {Missing two clusters\\(St2, L2, Mod.3)};
         \end{tikzpicture}
-        \caption{Event \texttt{2840829}, Run {022300}}
+        \caption{Event \#{2840829}, Run \#{022300}}
     \end{figure}
 
     % \begin{itemize}
@@ -125,24 +134,27 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{What \blueunderline{could} it mean for the Tracking?}
+    \frametitle{What \blueunderline{\it{could}} it mean for the Tracking?}
 
     \begin{itemize}
-        \item It seems one module does not have any data
-        \begin{itemize}
-            \item This is probably not fully true
-        \end{itemize}
+        \item It appears as though one module does not have any data
+              \begin{itemize}
+                  \item This is probably not completely true
+              \end{itemize}
         \item In theory this should just be a reduction of two measurements in the final track
-        \item The Track-$\chi^2$ is lower for these events, but overall quality ($\chi^2$/NDF) is still good.
-        \item  \textcolor{red}{Add chi2 plots to backup}
-        \item More importantly, does the missing hits cause issues with track reconstruction
-        \begin{itemize}
-            \item This is a harder question to answer.
-            \item Needs a more detailed study to quantify this.
-            \item Ideally, shouldn't since the seeding should still pick up everything needed for the track.
-        \end{itemize}
+        \item \begin{itemize}
+                  \item The Track-$\chi^2$ is lower for these events (\textcolor{red}{Add chi2 plots to backup})
+                  \item But overall quality ($\chi^2$/NDF) is still good.
+                  \item Impact on fiducial volume is around X\% (See slides from Oscar in backup)
+              \end{itemize}
+        \item More importantly, does the missing hits cause issues with track reconstruction?
+              \begin{itemize}
+                  \item This is a harder question to answer.
+                  \item Needs a more detailed study to quantify this.
+                  \item Ideally, shouldn't since the seeding should still pick up everything needed for the track.
+              \end{itemize}
     \end{itemize}
-    
+
 
 \end{frame}
 
@@ -187,17 +199,17 @@
     \frametitle{Caveat: How do we read the raw data?}
 
     \begin{itemize}
-        \item We saw that the SCT Raw Data was broken 
+        \item We saw that the SCT Raw Data was broken
         \item All of the checks so far uses \texttt{Calypso}
-        \begin{itemize}
-            \item Brain pointed out that this implicitly assumes that \texttt{Calypso} decoded the data correctly.
-        \end{itemize}
+              \begin{itemize}
+                  \item Brain pointed out that this implicitly assumes that \texttt{Calypso} decoded the data correctly.
+              \end{itemize}
         \item This opens up new questions
-        \begin{itemize}
-            \item Is the raw data actually broken?
-            \item If not, why is \texttt{Calypso} not decoding it correctly?
-            \item Why isn't \texttt{Calypso} flagging an error?
-        \end{itemize}
+              \begin{itemize}
+                  \item Is the raw data actually broken? If so, why?
+                  \item If not, why is \texttt{Calypso} not decoding it correctly?
+                  \item Why isn't \texttt{Calypso} flagging an error?
+              \end{itemize}
     \end{itemize}
 \end{frame}
 
@@ -229,8 +241,8 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
     }
 
     \begin{itemize}
-        \item While we report the error, we don't handle it in anyway it just ``continue'' on.
-        \item This is the reason we didn't catch it earlier in the prompt reconstruction.
+        \item While we report the error, we don't handle it in anyway, we ``continue'' over it.
+        \item This is partly why we didn't catch it earlier in the prompt reconstruction.
               \begin{itemize}
                   \item this particular \blueunderline{module has an error flag} set in the raw data.
                   \item we \blueunderline{don't consider this a failure} and we \blueunderline{don't load the data} for the module.
@@ -243,31 +255,31 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
 \end{frame}
 
 \begin{frame}
-    \frametitle{Final Result}
+    \frametitle{End Result}
 
     \begin{itemize}
         \item We have a valid ``event'' once \texttt{Calypso} is done reading the raw data.
-        \begin{itemize}
-            \item This event does not really have any data from the specific module.
-            \item If the track did not pass through the module, then it is not a problem.
-            \item But if the track did pass through the module, then we don't use the specific HITs.
-        \end{itemize}
+              \begin{itemize}
+                  \item This event does not really have any data from the specific module.
+                  \item If the track did not pass through the module, then it is not a problem.
+                  \item But if it did, then we don't use the specific SCT HITs.
+              \end{itemize}
     \end{itemize}
 
     \begin{itemize}
         \item Only way to stumble on this would be
-        \begin{itemize}
-            \item Either by looking for ERRORs in the log 
-            \begin{itemize}
-                \item Note that this isn't guaranteed due to messaging limits \href{https://gitlab.cern.ch/atlas/Gaudi/-/blob/master/GaudiCoreSvc/src/MessageSvc/MessageSvc.cpp\#L333}{(see \texttt{MessageSvc.cpp\#L333})}
-                \item Do need to check if this is the case here.
-            \end{itemize}
-            \item Or by specifically looking for the tracks that pass through this module
-            \begin{itemize}
-                \item this we do not usually do
-                \item we briefly did this for 2024 data (see \href{https://gitlab.cern.ch/papawan/Presentations/-/raw/main/DQFollowUp\_PPT\_detailed/build/TrackDQ\_2024\_Deltailed\_Pawan.pdf}{Track DQ 2024})
-            \end{itemize}
-        \end{itemize}
+              \begin{itemize}
+                  \item Either by looking for ERRORs in the log
+                        \begin{itemize}
+                            \item Note that this isn't guaranteed due to messaging limits \href{https://gitlab.cern.ch/atlas/Gaudi/-/blob/master/GaudiCoreSvc/src/MessageSvc/MessageSvc.cpp\#L333}{(see \texttt{MessageSvc.cpp\#L333})}
+                            \item Do need to check if this is the case here.
+                        \end{itemize}
+                  \item Or by specifically looking for the tracks that pass through this module
+                        \begin{itemize}
+                            \item this we do not usually do
+                            \item we briefly did this for 2024 data (see \href{https://gitlab.cern.ch/papawan/Presentations/-/raw/main/DQFollowUp\_PPT\_detailed/build/TrackDQ\_2024\_Deltailed\_Pawan.pdf}{Track DQ 2024})
+                        \end{itemize}
+              \end{itemize}
         \item Ideally if we have an error we should stop and handle it
     \end{itemize}
 
@@ -278,10 +290,10 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
 
     \begin{itemize}
         \item The raw data dump has no errors nominally
-        \begin{itemize}
-            \item Unless you run in debug mode specifically
-        \end{itemize}
-    \end{itemize}    
+              \begin{itemize}
+                  \item Unless you run in debug mode
+              \end{itemize}
+    \end{itemize}
     \scriptsize{
         \begin{verbatim}
 [ERROR] (file = TrackerDataFragment.icc)(func = DecodeModuleData)(line = 271) 
@@ -290,7 +302,7 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
     }
 
     \begin{itemize}
-        \item This is the decoding error that is flagged in the reconstruction.
+        \item This is the decoding error that was flagged in the reconstruction.
         \item Still investigating as to what is the exact cause of this error.
     \end{itemize}
 
@@ -310,7 +322,7 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
         \item A preliminary test was to comment out this error check in \texttt{Calypso}.
     \end{itemize}
 
-    
+
     \scriptsize{
         \begin{verbatim}
           else if (sctEvent->HasError())
@@ -325,14 +337,14 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
 
     \begin{itemize}
         \item This seems to run \textcolor{red}{none of the other checks are triggered (? Pawan: Verify this)}
-        \begin{itemize}
-            \item This is probably a good sign.
-        \end{itemize}
+              \begin{itemize}
+                  \item This is probably a good sign.
+              \end{itemize}
         \item This is not a proper fix, but just a test to see if data is recovered.
-        \begin{itemize}
-            \item Still need to identify and fix the root cause of the error.
-            \item If not fixable, then we need to handle it correctly in the reconstruction.
-        \end{itemize}
+              \begin{itemize}
+                  \item Still need to identify and fix the root cause of the error.
+                  \item If not fixable, then we need to handle it correctly in the reconstruction.
+              \end{itemize}
         \item Some results in the next slides.
     \end{itemize}
 
@@ -344,14 +356,13 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
         \centering
         \begin{subfigure}{0.49\textwidth}
             \includegraphics[width=\textwidth]{assets/Clusters_Patched.pdf}
-            \caption{Clusters from Run \texttt{022300}}
+            \caption{Clusters from Run \#{022300}}
         \end{subfigure}
         \begin{subfigure}{0.49\textwidth}
-            % \includegraphics[width=\textwidth]{assets/SpacePoints_Nominal.pdf}
-            \caption{Space Points from Run \texttt{022300}}
+            \includegraphics[width=\textwidth]{assets/SpacePoints_Patched.pdf}
+            \caption{Space Points from Run \#{022300}}
         \end{subfigure}
-        % \includegraphics[height=0.75\textheight]{assets/Clusters_Patched.pdf}
-        \caption{SCT Clusters and Space Points from Run \texttt{022300} after disabling the error check mentioned above.}
+        \caption{SCT Clusters and Space Points from Run \#{022300} after disabling the error check mentioned above.}
     \end{figure}
 
 \end{frame}
@@ -360,8 +371,18 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
     \frametitle{SCT Hits}
     \begin{figure}
         \centering
-        \includegraphics[height=0.75\textheight]{assets/SCTHits_Patched.pdf}
-        \caption{SCT Hits from Event \texttt{2840829}, Run \texttt{022300} after disabling the error check mentioned above.\\Note that out of time HITS (!\texttt{01X}) are shown in grey.}
+        % \includegraphics[height=0.75\textheight]{assets/SCTHits_Patched.pdf}
+        \begin{tikzpicture}
+            \node[inner sep=0, outer sep=0] (img) at (0,0)
+            {\includegraphics[width=0.70\textwidth]{assets/SCTHits_Patched.pdf}};
+
+            \draw[red, very thick]
+            ($(img.south west)!0.625!(img.south east) + (0,1.85)$)
+            rectangle
+            node (rect) {}
+            ($(img.south west)!0.715!(img.south east) + (0,1.45)$);
+        \end{tikzpicture}
+        \caption{SCT Hits from Event \#{2840829}, Run \#{022300} after disabling the error check mentioned above.Hits are restored(?) in the highlighted module.}
     \end{figure}
 \end{frame}
 
@@ -382,7 +403,7 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
             \node[red, font=\footnotesize, anchor=north west, align=center] at ($(rect.south east)+(0.02,-0.01)$)
             {Regained two clusters?\\(St2, L2, Mod.3)};
         \end{tikzpicture}
-        \caption{Event \texttt{2840829}, Run {022300} after disabling the error check mentioned above.}
+        \caption{Event \#{2840829}, Run \#{022300} after disabling the error check mentioned above.}
     \end{figure}
 
     % \begin{itemize}
@@ -397,23 +418,23 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
 
     \begin{itemize}
         \item Some issues was observed in the 2026 Tracker data.
-        \begin{itemize}
-            \item Specifically in St2, L2, Mod.3 didn't seem to have any hits/clusters
-            \item This could probably be isolated to a specific chip
-            \item Studies still ongoing to better understand this.
-        \end{itemize}
+              \begin{itemize}
+                  \item Specifically in St2, L2, Mod.3 didn't seem to have any hits/clusters
+                  \item This could probably be isolated to a specific chip
+                  \item Studies still ongoing to better understand this.
+              \end{itemize}
         \item The full extent of the impact on tracking is unclear
-        \begin{itemize}
-            \item Probably not too huge
-            \item Could use some studies to quantify this.
-        \end{itemize}
+              \begin{itemize}
+                  \item Probably not too huge
+                  \item Could use some studies to quantify this.
+              \end{itemize}
         \item We could use some better error handling in the reco. side
         \item Partly recovered by disabling some checks.
-        \begin{itemize}
-            \item This is good which means we can recover at least some of the data if not all.
-        \end{itemize}
+              \begin{itemize}
+                  \item This is good which means we can recover at least some of the data if not all.
+              \end{itemize}
     \end{itemize}
 
-    
+
 
 \end{frame}

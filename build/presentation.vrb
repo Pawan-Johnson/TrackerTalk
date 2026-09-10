@@ -20,14 +20,14 @@
 
     \begin{itemize}
         \item This seems to run \textcolor{red}{none of the other checks are triggered (? Pawan: Verify this)}
-        \begin{itemize}
-            \item This is probably a good sign.
-        \end{itemize}
+              \begin{itemize}
+                  \item This is probably a good sign.
+              \end{itemize}
         \item This is not a proper fix, but just a test to see if data is recovered.
-        \begin{itemize}
-            \item Still need to identify and fix the root cause of the error.
-            \item If not fixable, then we need to handle it correctly in the reconstruction.
-        \end{itemize}
+              \begin{itemize}
+                  \item Still need to identify and fix the root cause of the error.
+                  \item If not fixable, then we need to handle it correctly in the reconstruction.
+              \end{itemize}
         \item Some results in the next slides.
     \end{itemize}
 
