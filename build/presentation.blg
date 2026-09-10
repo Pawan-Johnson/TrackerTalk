@@ -1,0 +1,4 @@
+[0] Config.pm:329> INFO - This is Biber 2.22
+[0] Config.pm:332> INFO - Logfile is 'build/presentation.blg'
+[80] biber:342> INFO - === Thu Sep 10, 2026, 19:08:04
+[96] Biber.pm:421> INFO - Reading 'build/presentation.bcf'

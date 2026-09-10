@@ -15,10 +15,29 @@
 \begin{frame}
     \frametitle{Quick Recap on Tracker}
 
-    \begin{itemize}
-        \item TODO: Add tracker diagram and explain the stations and layers.
-        \item Explain numbering  of modules...
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{itemize}
+                \item We have four tracking stations
+                \item Each station has three layers
+                \item Each layer has eight modules
+                \item Each module has two pairs of single-sided silicon micro-strip sensors
+                      % \item Each module has 12 chips, each chip reads out 128 strips
+            \end{itemize}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\textwidth]{assets/ModuleNumbering.pdf}
+            \end{figure}
+        \end{column}
+
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.6\textwidth]{assets/SCTModules.png}
+                \includegraphics[width=0.7\textwidth]{assets/ModuleNumbering.png}
+            \end{figure}
+        \end{column}
+    \end{columns}
 
 \end{frame}
 
@@ -80,7 +99,7 @@
             \caption{Clusters from Run \#{022300}}
         \end{subfigure}
         \begin{subfigure}{0.49\textwidth}
-            \includegraphics[width=\textwidth]{assets/SpacePoints_Nominal.pdf}
+            \includegraphics[width=\textwidth]{assets/SpacePoints_Nominal.png}
             \caption{Space Points from Run \#{022300}}
         \end{subfigure}
         \caption{SCT Clusters and Space Points from Run \#{022300}. Note that these are subset of the space points that are from the same layer.}
@@ -142,10 +161,10 @@
                   \item This is probably not completely true
               \end{itemize}
         \item In theory this should just be a reduction of two measurements in the final track
-        \item \begin{itemize}
+              \begin{itemize}
                   \item The Track-$\chi^2$ is lower for these events (\textcolor{red}{Add chi2 plots to backup})
                   \item But overall quality ($\chi^2$/NDF) is still good.
-                  \item Impact on fiducial volume is around X\% (See slides from Oscar in backup)
+                  \item Overlap on fiducial volume is around 5.5\% (See slides from Oscar in backup)
               \end{itemize}
         \item More importantly, does the missing hits cause issues with track reconstruction?
               \begin{itemize}
@@ -170,7 +189,7 @@
 
     \begin{figure}
         \centering
-        \includegraphics[width=0.9\textwidth]{assets/TimeLine_Oscar.png}
+        \includegraphics[width=\textwidth, page=2, trim=0 0 0 1.5cm, clip]{assets/Station_2_Issues_Oscar.pdf}
         \caption{Timeline of events from Oscar see {\href{https://indico.cern.ch/event/1721063/}{Tracker Meeting Aug 25 2026}}}
     \end{figure}
 \end{frame}
@@ -181,8 +200,10 @@
     \begin{itemize}
         \item Thursday Mar 12 2025: Fine Time Scan, after HV Scan
         \item Thursday Mar 12 2025: Fine time adjustment
-        \item March 13-14 2025: Digitizer Crashes being observed
-        \item
+        \item March 13-14 2025: Digitizer Crashes being observed (and restarted)
+        \item Since then, module seems to have the issue
+        \item Recovered by Run \#{023377}, at this point we are in heavy-ion runs
+        \item Roughly corresponds to XXx \ifb
     \end{itemize}
 
 \end{frame}
@@ -276,9 +297,10 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
                         \end{itemize}
                   \item Or by specifically looking for the tracks that pass through this module
                         \begin{itemize}
-                            \item this we do not usually do
+                            \item this is not something we usually do
                             \item we briefly did this for 2024 data (see \href{https://gitlab.cern.ch/papawan/Presentations/-/raw/main/DQFollowUp\_PPT\_detailed/build/TrackDQ\_2024\_Deltailed\_Pawan.pdf}{Track DQ 2024})
                         \end{itemize}
+                  \item Maybe some more data monitoring could help?
               \end{itemize}
         \item Ideally if we have an error we should stop and handle it
     \end{itemize}
@@ -359,7 +381,7 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
             \caption{Clusters from Run \#{022300}}
         \end{subfigure}
         \begin{subfigure}{0.49\textwidth}
-            \includegraphics[width=\textwidth]{assets/SpacePoints_Patched.pdf}
+            \includegraphics[width=\textwidth]{assets/SpacePoints_Patched.png}
             \caption{Space Points from Run \#{022300}}
         \end{subfigure}
         \caption{SCT Clusters and Space Points from Run \#{022300} after disabling the error check mentioned above.}
@@ -414,6 +436,45 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
 \end{frame}
 
 \begin{frame}
+    \frametitle{Closer Look at the Strips}
+
+    \begin{itemize}
+        \item So the SCT Hits were recovered for the above event?
+        \item Is it really recovered everywhere?
+        \item Pick a run (\#{022300}) and count all the strips that were hit
+    \end{itemize}
+
+    \begin{columns}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{Nominal}
+                \begin{itemize}
+                    \item \blueunderline{1662} Strips have no hits
+                    \item Of which 1536(?) are in St2, L2, Mod.3
+                    \item Still understanding the numbers here.
+                    \item Module seems to have no data?
+                \end{itemize}
+            \end{block}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{block}{With Error Check Disabled}
+                \begin{itemize}
+                    \item \blueunderline{254} Strips have no hits.
+                    \item Of which 128(?) are in St2, L2, Mod.3
+                    \item Strips 512 to 639 have no hits (side 1)
+                    \item Consistent faulty chip? (chip 9?)
+                \end{itemize}
+            \end{block}
+        \end{column}
+    \end{columns}
+
+    \begin{itemize}
+        \item Possible chip issue was being treated as a module issue by \texttt{Calypso}.
+        \item Needs some more careful checks.
+        \item But cautiously optimistic.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{Summary}
 
     \begin{itemize}
@@ -429,6 +490,7 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
                   \item Could use some studies to quantify this.
               \end{itemize}
         \item We could use some better error handling in the reco. side
+        \item Maybe ideas for additional data monitoring/ DQ checks for future
         \item Partly recovered by disabling some checks.
               \begin{itemize}
                   \item This is good which means we can recover at least some of the data if not all.
@@ -436,5 +498,17 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
     \end{itemize}
 
 
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fiducial Volume Calculations\hfill \small{[Oscar]}}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth, page=4]{assets/Station_2_Issues_Oscar.pdf}
+        \caption{See {\href{https://indico.cern.ch/event/1721063/}{Tracker Meeting Aug 25 2026}}}
+
+    \end{figure}
 
 \end{frame}
