@@ -19,9 +19,9 @@
     }
 
     \begin{itemize}
-        \item This seems to run \textcolor{red}{none of the other checks are triggered (? Pawan: Verify this)}
+        \item This seems to run none of the other checks are triggere
               \begin{itemize}
-                  \item This is probably a good sign.
+                  \item probably a good sign.
               \end{itemize}
         \item This is not a proper fix, but just a test to see if data is recovered.
               \begin{itemize}

@@ -185,7 +185,7 @@
               \end{itemize}
         \item In theory this should just be a reduction of two measurements in the final track
               \begin{itemize}
-                  \item The Track-$\chi^2$ is lower for these events (\textcolor{red}{Add chi2 plots to backup})
+                  \item The Track-$\chi^2$ is lower for these events
                   \item But overall quality ($\chi^2$/NDF) is still good.
                   \item Overlap on fiducial volume is around 5.5\% (See slides from Oscar in backup)
               \end{itemize}
@@ -217,9 +217,9 @@
         \item Thursday Mar 12 2025: Fine Time Scan, after HV Scan
         \item Thursday Mar 12 2025: Fine time adjustment
         \item March 13-14 2025: Digitizer Crashes being observed (and restarted)
-        \item Since then, module seems to have the issue
+        \item Since Run \#{22299}, module seems to have the issue
         \item Recovered by Run \#{023377}, at this point we are in heavy-ion runs
-        \item Roughly corresponds to XXx \ifb
+        \item Roughly corresponds to approximately 30 \ifb (?)
     \end{itemize}
 
 \end{frame}
@@ -408,9 +408,9 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
     }
 
     \begin{itemize}
-        \item This seems to run \textcolor{red}{none of the other checks are triggered (? Pawan: Verify this)}
+        \item This seems to run none of the other checks are triggere
               \begin{itemize}
-                  \item This is probably a good sign.
+                  \item probably a good sign.
               \end{itemize}
         \item This is not a proper fix, but just a test to see if data is recovered.
               \begin{itemize}
@@ -536,14 +536,14 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
               \end{itemize}
         \item The full extent of the impact on tracking is unclear
               \begin{itemize}
-                  \item Probably not too huge
+                  \item Unlikely to be huge.
                   \item Could use some studies to quantify this.
               \end{itemize}
         \item We could use some better error handling in the reco. side
-        \item Maybe ideas for additional data monitoring/ DQ checks for future
+        \item Maybe ideas for additional data monitoring/ DQ checks for the future.
         \item Partly recovered by disabling some checks.
               \begin{itemize}
-                  \item This is good which means we can recover at least some of the data if not all.
+                  \item Further studies ongoing.
               \end{itemize}
     \end{itemize}
 
