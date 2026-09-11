@@ -352,8 +352,9 @@
 {
     \begin{beamercolorbox}[wd=\paperwidth,ht=\paperheight,sep=0pt]{section page}
         \begin{tikzpicture}
-            \useasboundingbox[fill=PrimaryColor] (0,0) rectangle (\paperwidth,\paperheight);
-            \fill[BackgroundColor] (0, 0.5\paperheight-1cm) rectangle(\paperwidth, 0.5\paperheight+1cm);
+            \useasboundingbox[fill=white] (0,0) rectangle (\paperwidth,\paperheight);
+            % \useasboundingbox[fill=PrimaryColor] (0,0) rectangle (\paperwidth,\paperheight);
+            % \fill[BackgroundColor] (0, 0.5\paperheight-1cm) rectangle(\paperwidth, 0.5\paperheight+1cm);
             \node[text width=\paperwidth-2cm,align=center] at (0.5\paperwidth, 0.5\paperheight) 
                  {\color{PrimaryColor}\Huge\textbf{\insertsection}};
         \end{tikzpicture}
