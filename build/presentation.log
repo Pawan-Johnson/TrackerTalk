@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.4)  10 SEP 2026 23:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.4)  11 SEP 2026 12:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1445,29 +1445,56 @@ Overfull \vbox (1.51138pt too high) detected at line 153
 [8
 
  <./assets/Event_Nominal.png>]
-LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <14.4> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 178.
+<assets/TrackLayers.pdf, id=293, 1445.4pt x 433.62pt>
+File: assets/TrackLayers.pdf Graphic file (type pdf)
+<use assets/TrackLayers.pdf>
+Package pdftex.def Info: assets/TrackLayers.pdf  used on input line 176.
+(pdftex.def)             Requested size: 398.3386pt x 119.5006pt.
  [9
 
-] [10
+ <./assets/TrackLayers.pdf>]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <14.4> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 201.
+ [10
 
 ]
-<assets/Station_2_Issues_Oscar.pdf, id=306, page=2, 722.7pt x 406.51875pt>
+<assets/Station_2_Issues_Oscar.pdf, id=356, page=2, 722.7pt x 406.51875pt>
 File: assets/Station_2_Issues_Oscar.pdf Graphic file (type pdf)
 <use assets/Station_2_Issues_Oscar.pdf, page 2>
-Package pdftex.def Info: assets/Station_2_Issues_Oscar.pdf , page2 used on input line 195.
+Package pdftex.def Info: assets/Station_2_Issues_Oscar.pdf , page2 used on input line 211.
 (pdftex.def)             Requested size: 398.3386pt x 200.53989pt.
 
-Overfull \vbox (27.6442pt too high) detected at line 195
+Overfull \vbox (27.6442pt too high) detected at line 211
  []
 
 [11
 
  <./assets/Station_2_Issues_Oscar.pdf>] [12
 
-] [13
-
 ]
+<assets/Trimable-Channels-vs-May22_run3.pdf, id=392, 325.215pt x 339.66899pt>
+File: assets/Trimable-Channels-vs-May22_run3.pdf Graphic file (type pdf)
+<use assets/Trimable-Channels-vs-May22_run3.pdf>
+Package pdftex.def Info: assets/Trimable-Channels-vs-May22_run3.pdf  used on input line 266.
+(pdftex.def)             Requested size: 79.66649pt x 83.20667pt.
+<assets/hitPatterns_comparison-37.pdf, id=393, 569.12625pt x 426.59375pt>
+File: assets/hitPatterns_comparison-37.pdf Graphic file (type pdf)
+<use assets/hitPatterns_comparison-37.pdf>
+Package pdftex.def Info: assets/hitPatterns_comparison-37.pdf  used on input line 266.
+(pdftex.def)             Requested size: 97.59404pt x 73.15137pt.
+<assets/hitPatterns_comparison-144.pdf, id=394, 569.12625pt x 426.59375pt>
+File: assets/hitPatterns_comparison-144.pdf Graphic file (type pdf)
+<use assets/hitPatterns_comparison-144.pdf>
+Package pdftex.def Info: assets/hitPatterns_comparison-144.pdf  used on input line 266.
+(pdftex.def)             Requested size: 97.59404pt x 73.15137pt.
+<assets/hitPatterns_comparison-143.pdf, id=395, 569.12625pt x 426.59375pt>
+File: assets/hitPatterns_comparison-143.pdf Graphic file (type pdf)
+<use assets/hitPatterns_comparison-143.pdf>
+Package pdftex.def Info: assets/hitPatterns_comparison-143.pdf  used on input line 266.
+(pdftex.def)             Requested size: 97.59404pt x 73.15137pt.
+ [13
+
+ <./assets/Trimable-Channels-vs-May22_run3.pdf> <./assets/hitPatterns_comparison-37.pdf, page is rotated 90 degrees> <./assets/hitPatterns_comparison-144.pdf, page is rotated 90 degrees> <./assets/hitPatterns_comparison-143.pdf, page is rotated 90 degrees>]
 \openout4 = `presentation.vrb'.
 
  (build/presentation.vrb) [14
@@ -1483,7 +1510,7 @@ Overfull \vbox (27.6442pt too high) detected at line 195
 \openout4 = `presentation.vrb'.
 
  (build/presentation.vrb
-<assets/ErrorCode.png, id=368, 1112.155pt x 407.5225pt>
+<assets/ErrorCode.png, id=599, 1112.155pt x 407.5225pt>
 File: assets/ErrorCode.png Graphic file (type png)
 <use assets/ErrorCode.png>
 Package pdftex.def Info: assets/ErrorCode.png  used on input line 23.
@@ -1496,38 +1523,38 @@ Package pdftex.def Info: assets/ErrorCode.png  used on input line 23.
  (build/presentation.vrb) [18
 
 ]
-<assets/Clusters_Patched.pdf, id=382, 569.12625pt x 367.3725pt>
+<assets/Clusters_Patched.pdf, id=613, 569.12625pt x 367.3725pt>
 File: assets/Clusters_Patched.pdf Graphic file (type pdf)
 <use assets/Clusters_Patched.pdf>
-Package pdftex.def Info: assets/Clusters_Patched.pdf  used on input line 390.
+Package pdftex.def Info: assets/Clusters_Patched.pdf  used on input line 440.
 (pdftex.def)             Requested size: 195.1881pt x 125.99248pt.
-<assets/SpacePoints_Patched.png, id=383, 569.2467pt x 367.3725pt>
+<assets/SpacePoints_Patched.png, id=614, 569.2467pt x 367.3725pt>
 File: assets/SpacePoints_Patched.png Graphic file (type png)
 <use assets/SpacePoints_Patched.png>
-Package pdftex.def Info: assets/SpacePoints_Patched.png  used on input line 390.
+Package pdftex.def Info: assets/SpacePoints_Patched.png  used on input line 440.
 (pdftex.def)             Requested size: 195.1881pt x 125.97006pt.
  [19
 
  <./assets/Clusters_Patched.pdf, page is rotated 90 degrees> <./assets/SpacePoints_Patched.png (PNG copy)>]
-<assets/SCTHits_Patched.pdf, id=433, 569.12625pt x 367.3725pt>
+<assets/SCTHits_Patched.pdf, id=664, 569.12625pt x 367.3725pt>
 File: assets/SCTHits_Patched.pdf Graphic file (type pdf)
 <use assets/SCTHits_Patched.pdf>
-Package pdftex.def Info: assets/SCTHits_Patched.pdf  used on input line 409.
+Package pdftex.def Info: assets/SCTHits_Patched.pdf  used on input line 459.
 (pdftex.def)             Requested size: 278.83578pt x 179.99727pt.
 
-Overfull \vbox (18.10156pt too high) detected at line 409
+Overfull \vbox (18.10156pt too high) detected at line 459
  []
 
 [20
 
  <./assets/SCTHits_Patched.pdf, page is rotated 90 degrees>]
-<assets/Event_Patched.png, id=483, 1487.5575pt x 930.47626pt>
+<assets/Event_Patched.png, id=713, 1487.5575pt x 930.47626pt>
 File: assets/Event_Patched.png Graphic file (type png)
 <use assets/Event_Patched.png>
-Package pdftex.def Info: assets/Event_Patched.png  used on input line 436.
+Package pdftex.def Info: assets/Event_Patched.png  used on input line 486.
 (pdftex.def)             Requested size: 278.83578pt x 174.40707pt.
 
-Overfull \vbox (1.51138pt too high) detected at line 436
+Overfull \vbox (1.51138pt too high) detected at line 486
  []
 
 [21
@@ -1537,18 +1564,34 @@ Overfull \vbox (1.51138pt too high) detected at line 436
 ] [23
 
 ]
-<assets/Station_2_Issues_Oscar.pdf, id=500, page=4, 722.7pt x 406.51875pt>
+<assets/Station_2_Issues_Oscar.pdf, id=730, page=4, 722.7pt x 406.51875pt>
 File: assets/Station_2_Issues_Oscar.pdf Graphic file (type pdf)
 <use assets/Station_2_Issues_Oscar.pdf, page 4>
-Package pdftex.def Info: assets/Station_2_Issues_Oscar.pdf , page4 used on input line 514.
+Package pdftex.def Info: assets/Station_2_Issues_Oscar.pdf , page4 used on input line 564.
 (pdftex.def)             Requested size: 318.67209pt x 179.25337pt.
 
-Overfull \vbox (6.35768pt too high) detected at line 514
+Overfull \vbox (6.35768pt too high) detected at line 564
  []
 
 [24
 
- <./assets/Station_2_Issues_Oscar.pdf>])
+ <./assets/Station_2_Issues_Oscar.pdf>]
+<assets/TrackChi2.pdf, id=752, 1445.4pt x 433.62pt>
+File: assets/TrackChi2.pdf Graphic file (type pdf)
+<use assets/TrackChi2.pdf>
+Package pdftex.def Info: assets/TrackChi2.pdf  used on input line 577.
+(pdftex.def)             Requested size: 318.67209pt x 95.6018pt.
+<assets/TrackChi2PerDoF.pdf, id=753, 1445.4pt x 433.62pt>
+File: assets/TrackChi2PerDoF.pdf Graphic file (type pdf)
+<use assets/TrackChi2PerDoF.pdf>
+Package pdftex.def Info: assets/TrackChi2PerDoF.pdf  used on input line 577.
+(pdftex.def)             Requested size: 318.67209pt x 95.6018pt.
+ [25
+
+ <./assets/TrackChi2.pdf> <./assets/TrackChi2PerDoF.pdf
+
+pdfTeX warning: pdflatex (file ./assets/TrackChi2PerDoF.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>])
 \tf@nav=\write8
 \openout8 = `presentation.nav'.
 
@@ -1570,18 +1613,18 @@ Package logreq Info: Writing requests to 'presentation.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48244 strings out of 467363
- 1020915 string characters out of 5419002
+ 48297 strings out of 467363
+ 1022994 string characters out of 5419002
  1900609 words of memory out of 6000000
- 76526 multiletter control sequences out of 15000+600000
+ 76577 multiletter control sequences out of 15000+600000
  651521 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,131p,2527b,1304s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on build/presentation.pdf (24 pages, 2932709 bytes).
+Output written on build/presentation.pdf (25 pages, 3095517 bytes).
 PDF statistics:
- 577 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
- 49 named destinations out of 1000 (max. 500000)
- 160 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 907 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 51 named destinations out of 1000 (max. 500000)
+ 195 words of extra memory for PDF output out of 10000 (max. 10000000)
 

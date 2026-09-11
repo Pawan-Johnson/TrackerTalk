@@ -152,6 +152,29 @@
 
 \end{frame}
 
+
+
+\begin{frame}
+    \frametitle{Track Layers}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=1.0\textwidth]{assets/TrackLayers.pdf}
+    \end{figure}
+
+    \begin{itemize}
+        \item Average Layers per Track -- Ideally should be 9.
+        \item Harder to see when looking at all tracks
+        \item The deficit of one  layer more clearer when you require
+        \begin{itemize}
+            \item Track passing through the module in question.
+        \end{itemize}
+        \item Can be seen in the clusters, Track nDoF as well
+    \end{itemize}
+
+
+\end{frame}
+
 \begin{frame}
     \frametitle{What \blueunderline{\it{could}} it mean for the Tracking?}
 
@@ -173,13 +196,6 @@
                   \item Ideally, shouldn't since the seeding should still pick up everything needed for the track.
               \end{itemize}
     \end{itemize}
-
-
-\end{frame}
-
-\begin{frame}
-    \frametitle{Cluster Per Run}
-
 
 
 \end{frame}
@@ -209,9 +225,43 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Tangent: Possible Timing Issues?}
+    \frametitle{Tangent: Possible Timing Issues? \hfill \small{[Oscar]}}
 
+\begin{columns}
+    \begin{column}{0.5\textwidth}
+        \begin{itemize}
+            \item Since we adjusted the timing just prior to this
+            \item We considered the possibility that the data just went into the wrong time bin
+            \item Oscar quickly ruled this out since we didn't see any data at all.
+            \item The timing scan itself did not show any abnormalities.
+        \end{itemize}
 
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.4\textwidth]{assets/Trimable-Channels-vs-May22_run3.pdf}
+        \end{figure}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        \begin{figure}
+            \centering
+            \begin{subfigure}{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/hitPatterns_comparison-37.pdf}
+            \end{subfigure}
+                        \begin{subfigure}{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/hitPatterns_comparison-144.pdf}
+            \end{subfigure}
+        \end{figure}
+                \begin{figure}
+            \centering
+            \begin{subfigure}{0.49\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]{assets/hitPatterns_comparison-143.pdf}
+            \end{subfigure}
+        \end{figure}
+    \end{column}
+\end{columns}
 
 \end{frame}
 
@@ -510,5 +560,18 @@ ToolSvc.TrackerDataDecoderTool            ERROR Online module 0 reports one or m
         \caption{See {\href{https://indico.cern.ch/event/1721063/}{Tracker Meeting Aug 25 2026}}}
 
     \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Track Quality}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{assets/TrackChi2.pdf}
+        \includegraphics[width=0.8\textwidth]{assets/TrackChi2PerDoF.pdf}
+    \end{figure}
+
+    
 
 \end{frame}
